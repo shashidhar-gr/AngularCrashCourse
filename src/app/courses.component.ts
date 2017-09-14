@@ -4,14 +4,13 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'courses',
     template: `
-        <input #email (keyup.enter) = "onKeyUp(email.value)"/>
+        <input [value] = "email" (keyup.enter) = "email = $event.target.value; onKeyUp()"/>
     `
 })
 export class CoursesComponent {
-    imageUrl = 'http://lorempixel.com/400/200';
-    colSpan = 2;
+    email = "me@example.com";
 
-    onKeyUp(email) {
-        console.log("Enter key pressed!!",email);
+    onKeyUp() {
+        console.log(this.email);
     }
 }
