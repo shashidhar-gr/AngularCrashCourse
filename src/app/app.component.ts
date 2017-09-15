@@ -13,7 +13,7 @@ export class AppComponent {
     isFavorite: false
   }
 
-  onFavoriteChanged() {
-    console.log("Favorite changed!!");
+  onFavoriteChanged(isFavorite) {
+    console.log("Favorite changed ",isFavorite);
   }
 }
